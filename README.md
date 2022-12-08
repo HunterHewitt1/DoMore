@@ -10,12 +10,15 @@
 
 ### **_Description_**
 
-## DoMore is a productivity app that can be used to track daily task and post them to your feed to share with friends or to your personal log to hold yourself accountable. DoMore implemets a daily prodcutivty score at the end of the day; this score is used to display a snapshot of daily, weekly, monthly, and even yearly progress.
+DoMore is a productivity app that can be used to track daily task and post them to your feed to share with friends or to your personal log to hold yourself accountable. DoMore implemets a daily prodcutivty score at the end of the day; this score is used to display a snapshot of daily, weekly, monthly, and even yearly progress.
 
-### **_How To Get Started_**
+---
 
-npm install
-npm start
+### **_Getting Started_**
+
+- `Fork` & `Clone`
+- `npm install`
+- `npm start`
 
 ---
 
@@ -27,10 +30,22 @@ npm start
 
 ---
 
+### **_Links_**
+
+---
+
 ### **_Credits_**
 
 #### Trello Board: [Trello]()
 
-### Grid Guide [CSS-Tricks] (https://css-tricks.com/snippets/css/complete-guide-grid/)
+#### **↓ Component Hierarchy Diagram ↓**
+
+### [CHD]()
+
+#### **↓ Entity Relationship Diagram ↓**
+
+### [ERD](https://imgur.com/AF85Nyz)
+
+#### Grid Guide [CSS-Tricks](https://css-tricks.com/snippets/css/complete-guide-grid/)
 
 ---
