@@ -39,3 +39,8 @@ app.put('/users/:id', async (req, res) => {
   )
   res.json(updateUser)
 })
+
+app.delete('/users/:id', async (req, res) => {
+  let deleteUser = await UserAccount.findByIdAndDelete(req.params.id)
+  res.json(deleteUser)
+})
