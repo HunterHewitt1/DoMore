@@ -1,6 +1,6 @@
 const express = require('express')
 const cors = require('cors')
-const db = require('./index')
+const db = require('./middleware/index')
 const { UserAccount, Task } = require('./models')
 
 require('dotenv').config()
@@ -22,7 +22,10 @@ app.get('/', (req, res) => {
 })
 
 app.post('/users', async (req, res) => {
-  let createUser = await UserAccount.create(req.body)
+  let exampleId = '63925c42c3ab02881264d2ec'
+  const requestBody = { ...req.body, UserAccount_id: exampleId }
+
+  let createUser = await UserAccount.create(requestBody)
   res.json(createUser)
 })
 
@@ -64,10 +67,7 @@ app.delete('/tasks/:id', async (req, res) => {
   res.json(deleteTask)
 })
 
-// app.post('/tasks', async (req, res) => {
-//   let exampleId = '6352fad4125786e90a11aa44'
-//   const requestBody = { ...req.body, realtorId: exampleId }
-
-//   let createRealtor = await Realtor.create(requestBody)
-//   res.json(createRealtor)
-// })
+app.post('/tasks', async (req, res) => {
+  let createTask = await Task.create(req.body)
+  res.json(createTask)
+})
