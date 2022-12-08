@@ -1,6 +1,6 @@
 const express = require('express')
 const cors = require('cors')
-const mongoose = require('mongoose')
+const db = require('./index')
 const { UserAccount, Task } = require('./models')
 
 require('dotenv').config()
@@ -27,8 +27,8 @@ app.post('/users', async (req, res) => {
 })
 
 app.get('/users', async (req, res) => {
-  let getUsers = await UserAccount.find()
-  res.json(getUsers)
+  let getUsers = await UserAccount.find({})
+  res.send(getUsers)
 })
 
 app.put('/users/:id', async (req, res) => {
@@ -44,3 +44,30 @@ app.delete('/users/:id', async (req, res) => {
   let deleteUser = await UserAccount.findByIdAndDelete(req.params.id)
   res.json(deleteUser)
 })
+
+// Tasks //
+
+app.get('/tasks', async (req, res) => {
+  let getTasks = await Task.find({})
+  res.json(getTasks)
+})
+
+app.put('/tasks/:id', async (req, res) => {
+  let updateTask = await Task.findByIdAndUpdate(req.params.id, req.body, {
+    new: true
+  })
+  res.json(updateTask)
+})
+
+app.delete('/tasks/:id', async (req, res) => {
+  let deleteTask = await Task.findByIdAndDelete(req.params.id)
+  res.json(deleteTask)
+})
+
+// app.post('/tasks', async (req, res) => {
+//   let exampleId = '6352fad4125786e90a11aa44'
+//   const requestBody = { ...req.body, realtorId: exampleId }
+
+//   let createRealtor = await Realtor.create(requestBody)
+//   res.json(createRealtor)
+// })
