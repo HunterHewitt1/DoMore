@@ -40,11 +40,11 @@ DoMore is a productivity app that can be used to track daily task and post them 
 
 #### **↓ Component Hierarchy Diagram ↓**
 
-### [CHD]()
+### [CHD](https://imgur.com/AF85Nyz)
 
 #### **↓ Entity Relationship Diagram ↓**
 
-### [ERD](https://imgur.com/AF85Nyz)
+### [ERD](https://imgur.com/I6jsLSr)
 
 #### Grid Guide [CSS-Tricks](https://css-tricks.com/snippets/css/complete-guide-grid/)
 
