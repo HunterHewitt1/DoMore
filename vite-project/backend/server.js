@@ -1,6 +1,7 @@
 const express = require('express')
 const cors = require('cors')
 const mongoose = require('mongoose')
+const { UserAccount, Task } = require('./models')
 
 require('dotenv').config()
 
@@ -18,4 +19,23 @@ app.listen(port, () => {
 
 app.get('/', (req, res) => {
   res.send({ msg: 'This route is being hit' })
+})
+
+app.post('/users', async (req, res) => {
+  let createUser = await UserAccount.create(req.body)
+  res.json(createUser)
+})
+
+app.get('/users', async (req, res) => {
+  let getUsers = await UserAccount.find()
+  res.json(getUsers)
+})
+
+app.put('/users/:id', async (req, res) => {
+  let updateUser = await UserAccount.findByIdAndUpdate(
+    req.params.id,
+    req.body,
+    { new: true }
+  )
+  res.json(updateUser)
 })
