@@ -2,6 +2,7 @@ const express = require('express')
 const cors = require('cors')
 const db = require('./middleware/index')
 const { UserAccount, Task } = require('./models')
+const AuthRouter = require('./routes/AuthRouter')
 
 require('dotenv').config()
 
@@ -10,6 +11,7 @@ const port = process.env.PORT || 3001
 
 app.use(cors())
 app.use(express.json())
+app.use('/auth', AuthRouter)
 
 app.listen(port, () => {
   console.log(`Server is running on port: ${port}`)
@@ -32,6 +34,11 @@ app.post('/users', async (req, res) => {
 app.get('/users', async (req, res) => {
   let getUsers = await UserAccount.find({})
   res.send(getUsers)
+})
+
+app.get('/users/:id', async (req, res) => {
+  let getUser = await UserAccount.findById(req.params.id)
+  res.json(getUser)
 })
 
 app.put('/users/:id', async (req, res) => {

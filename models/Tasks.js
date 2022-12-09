@@ -5,7 +5,8 @@ const Task = new Schema({
   taskDescription: { type: String, required: true },
   taskDueDate: { type: Date, required: false },
   taskCompleted: { type: Boolean, required: false },
-  userAccount_id: { type: Schema.Types.ObjectId, ref: 'userAccount_id' }
+  userAccount_id: { type: Schema.Types.ObjectId, ref: 'userAccount_id' },
+  passwordDigest: { type: String, required: true }
 })
 
 module.exports = Task

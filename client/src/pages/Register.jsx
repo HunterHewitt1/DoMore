@@ -47,6 +47,17 @@ const Register = () => {
             />
           </div>
           <div className="input-wrapper">
+            <label htmlFor="name">Name</label>
+            <input
+              onChange={handleChange}
+              name="name"
+              type="text"
+              placeholder="John Smith"
+              value={formValues.name}
+              required
+            />
+          </div>
+          <div className="input-wrapper">
             <label htmlFor="email">Email</label>
             <input
               onChange={handleChange}
