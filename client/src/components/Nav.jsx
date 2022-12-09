@@ -15,18 +15,19 @@ const Nav = ({ authenticated, user, handleLogOut }) => {
   }
 
   const publicOptions = (
-    <nav>
-      <Link className='navbar' to="/">Home</Link>
-      <Link className='navbar' to="/register">Sign Up</Link>
-      <Link className='navbar' to="/signin">Log In</Link>
+    <nav className='navbar'>
+      <Link className='navbar-home' to="/">Do More</Link>
+      <Link className='navbar-right' to="/register">Sign Up</Link>
+      <Link className='navbar-right' to="/signin">Log In</Link>
+      
+      
     </nav>
   )
 
   return (
     <header>
       <Link to="/">
-        <div>
-        </div>
+        <div></div>
       </Link>
       {authenticated && user ? authenticatedOptions : publicOptions}
     </header>

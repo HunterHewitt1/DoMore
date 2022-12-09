@@ -7,9 +7,9 @@ const Home = () => {
     <div className="home-container col">
 
       <section className="welcome-signin">
-        {/* <button onClick={() => navigate('/signin')}>
+        <button onClick={() => navigate('/signin')}>
           Click Here To Get Started
-        </button> */}
+        </button>
       </section>
     </div>
   )
