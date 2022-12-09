@@ -8,6 +8,7 @@ import Home from './pages/Home'
 import './styles/App.css'
 import { CheckSession } from './services/Auth'
 
+
 const App = () => {
   const [authenticated, toggleAuthenticated] = useState(false)
   const [user, setUser] = useState(null)
@@ -42,20 +43,9 @@ const App = () => {
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route
-            path="/signin"
-            element={
-              <SignIn
-                toggleAuthenticated={toggleAuthenticated}
-                setUser={setUser}
-              />
-            }
-          />
+          <Route path="/signin" element={<SignIn toggleAuthenticated={toggleAuthenticated} setUser={setUser}/>} />
           <Route path="/register" element={<Register />} />
-          <Route
-            path="/feed"
-            element={<Feed user={user} authenticated={authenticated} />}
-          />
+          <Route path="/feed" element={<Feed user={user} authenticated={authenticated}/>} />
         </Routes>
       </main>
     </div>
