@@ -5,7 +5,9 @@ const Register = () => {
   let navigate = useNavigate()
 
   const [formValues, setFormValues] = useState({
-    name: '',
+    username: '',
+    firstname: '',
+    lastname: '',
     email: '',
     password: '',
     confirmPassword: ''
@@ -18,12 +20,17 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     await RegisterUser({
-      name: formValues.name,
+      username: formValues.username,
       email: formValues.email,
-      password: formValues.password
+      password: formValues.password,
+      firstname: formValues.firstname,
+      lastname: formValues.lastname
+
     })
     setFormValues({
-      name: '',
+      username: '',
+      firstname: '',
+      lastname: '',
       email: '',
       password: '',
       confirmPassword: ''
@@ -35,25 +42,36 @@ const Register = () => {
     <div className="signin col">
       <div className="card-overlay centered">
         <form className="col" onSubmit={handleSubmit}>
-          <div className="input-wrapper">
-            <label htmlFor="name">Name</label>
+        <div className="input-wrapper">
+            <label htmlFor="name">User Name</label>
             <input
               onChange={handleChange}
-              name="name"
+              name="username"
               type="text"
               placeholder="John Smith"
-              value={formValues.name}
+              value={formValues.username}
               required
             />
           </div>
           <div className="input-wrapper">
-            <label htmlFor="name">Name</label>
+            <label htmlFor="name">First Name</label>
             <input
               onChange={handleChange}
-              name="name"
+              name="firstname"
               type="text"
-              placeholder="John Smith"
-              value={formValues.name}
+              placeholder="John"
+              value={formValues.firstname}
+              required
+            />
+          </div>
+          <div className="input-wrapper">
+            <label htmlFor="name">Last Name</label>
+            <input
+              onChange={handleChange}
+              name="lastname"
+              type="text"
+              placeholder="Smith"
+              value={formValues.lastname}
               required
             />
           </div>
@@ -68,7 +86,6 @@ const Register = () => {
               required
             />
           </div>
-
           <div className="input-wrapper">
             <label htmlFor="password">Password</label>
             <input
@@ -80,10 +97,10 @@ const Register = () => {
             />
           </div>
           <div className="input-wrapper">
-            <label htmlFor="confirmPassword">Confirm Password</label>
+            <label htmlFor="password">Confirm Password</label>
             <input
               onChange={handleChange}
-              type="password"
+              type="Password"
               name="confirmPassword"
               value={formValues.confirmPassword}
               required

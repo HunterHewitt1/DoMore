@@ -78,3 +78,10 @@ app.post('/tasks', async (req, res) => {
   let createTask = await Task.create(req.body)
   res.json(createTask)
 })
+
+//get tasks by user
+
+app.get('user/:id', async (req, res) => {
+  let getTaskByUser = await Task.find({ userAccount_id: req.params.id })
+  res.json(getTaskByUser)
+})
