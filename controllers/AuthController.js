@@ -3,14 +3,14 @@ const middleware = require('../middleware')
 
 const Login = async (req, res) => {
   try {
-    const user = await UserAccount.findOne({
-      where: { email: req.body.email },
-      raw: true
-    })
+    console.log(req.body.email)
+    const user = await UserAccount.findOne({ email: req.body.email })
+    console.log(user)
     if (
       user &&
       (await middleware.comparePassword(user.passwordDigest, req.body.password))
     ) {
+      console.log('first if statement is running')
       let payload = {
         id: user.id,
         email: user.email
@@ -18,7 +18,7 @@ const Login = async (req, res) => {
       let token = middleware.createToken(payload)
       return res.send({ user: payload, token })
     }
-    res.status(401).send({ status: 'Error', msg: 'Unauthorized' })
+    res.status(401).send({ status: 'Error', msg: 'Unauthorized TEST' })
   } catch (error) {
     throw error
   }

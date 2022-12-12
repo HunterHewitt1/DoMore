@@ -8,32 +8,6 @@
   --primary-button-hover: #344E41;
   --background-image: linear-gradient(to top, #3b41c5 0%, #a981bb 49%, #ffc8a9 100%);;
 }
-* {
-
-  margin: 0;
-  
-  padding: 0;
-  
-  box-sizing: border-box;
-  
-  }
-  
-  body {
-  
-  
-  }
-  
-  a {
-  
-  text-decoration: none;
-  
-  }
-  
-  li {
-  
-  list-style: none;
-  
-  }
 body {
   font-family: 'Open Sans', sans-serif;
   margin: 0;
@@ -47,11 +21,6 @@ button {
   transition: all 0.2s ease;
   padding: 0.8em 1.2em;
   font-size: 1.1rem;
-}
-
-button,
-input {
-  border-radius: 8px;
 }
 
 header {
@@ -98,7 +67,6 @@ main {
   color: var(--link-color-secondary);
   font-size: 1.1rem;
 }
-A3B18A
 .home-container button:hover {
   transform: scale(1.1);
   background-color: var(--primary-button-hover);
@@ -106,7 +74,7 @@ A3B18A
 }
 
 .card-overlay {
-  /* border: 2px solid var(--primary-button-hover); */
+  border: 2px solid var(--primary-button-hover);
   width: 60%;
   padding: 1em;
   border-radius: 8px;
@@ -200,8 +168,6 @@ form button:disabled {
   text-decoration: none;
 }
 .navbar-right{
-  display: flex;
-  margin-top: 20px;
   padding: 15px 25px;
   font-size: 20px;
   text-align: center;
@@ -212,4 +178,19 @@ form button:disabled {
   border: none;
   border-radius: 15px;
   box-shadow: 0 9px #999;
+}
+.auth-navbar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  text-decoration: none;
+  flex-direction: block;
+  margin: 20px 0;
+  margin-left: 20px;
+}
+.auth-welcome{
+  display: block;
+  flex-direction: row;
+  justify-content: space-between;
 }
