@@ -1,3 +1,4 @@
+import axios from 'axios'
 import { useEffect, useState } from 'react'
 
 import { useNavigate } from 'react-router-dom'
@@ -5,16 +6,16 @@ import { useNavigate } from 'react-router-dom'
 const Feed = ({ user, authenticated }) => {
   const navigate = useNavigate()
 
-  const [posts, setPosts] = useState([])
+  const [tasks, setTasks] = useState([])
 
   useEffect(() => {
-    const handlePosts = async () => {
-      const data = await GetPosts()
-      setPosts(data)
+    const fetchTasks = async () => {
+      const response = await axios.get(`http://localhost:3001/user/${user.id}`)
+      setTasks(response.data)
     }
-    handlePosts()
-  }, [])
 
+    fetchTasks()
+  }, [user.id])
   return user && authenticated ? (
     <section>
       <h3>Tasks</h3>
