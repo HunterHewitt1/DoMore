@@ -34,6 +34,7 @@ app.post('/users', async (req, res) => {
 app.get('/users', async (req, res) => {
   let getUsers = await UserAccount.find({})
   res.send(getUsers)
+  console.log('getUsers')
 })
 
 app.get('/users/:id', async (req, res) => {
@@ -81,7 +82,8 @@ app.post('/tasks', async (req, res) => {
 
 //get tasks by user
 
-app.get('user/:id', async (req, res) => {
+app.get('/user/:id', async (req, res) => {
   let getTaskByUser = await Task.find({ userAccount_id: req.params.id })
   res.json(getTaskByUser)
+  console.log('getTaskByUser')
 })

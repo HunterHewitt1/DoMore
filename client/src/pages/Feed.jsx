@@ -18,6 +18,15 @@ const Feed = ({ user, authenticated }) => {
   return user && authenticated ? (
     <section>
       <h3>Tasks</h3>
+      <div className='add-tasks'>
+        <form className='tasks-form'>
+          <label>Task Name: </label>
+          <input/>
+          <label>Task Description: </label>
+          <input/>
+        </form>
+
+      </div>
       <div className="grid col-4">
         <div className="feed"></div>
       </div>
