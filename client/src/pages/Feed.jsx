@@ -3,9 +3,16 @@ import { useEffect, useState } from 'react'
 
 import { useNavigate } from 'react-router-dom'
 
-const Feed = ({ user, authenticated }) => {
+const Feed = ({ user, authenticated, props }) => {
   const navigate = useNavigate()
-
+  console.log(user)
+  const [formState, setFormState] = useState({
+    taskName: '',
+    taskDescription: '',
+    taskDueDate: '',
+    taskCompleted: '',
+    userAccount_id: user.id
+  })
   const [tasks, setTasks] = useState([])
 
   useEffect(() => {
@@ -13,9 +20,19 @@ const Feed = ({ user, authenticated }) => {
       const response = await axios.get(`http://localhost:3001/user/${user.id}`)
       setTasks(response.data)
     }
-
     fetchTasks()
   }, [user.id])
+
+  useEffect(() => {
+    const apiCall = async () => {
+      let response = await axios.get('http://localhost:3001/tasks')
+      newTask(response.data)
+    }
+
+    apiCall()
+  }, [])
+
+
   return user && authenticated ? (
     <section>
       <h3>Tasks</h3>
