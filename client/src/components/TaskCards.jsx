@@ -1,4 +1,4 @@
-const TasksCard = (props => {
+const TaskCard = (props => {
   return(
     <div className="tasks_card" onClick={() => props.onClick(props.id)}>
     <h3>{props.taskName}</h3>
@@ -10,4 +10,4 @@ const TasksCard = (props => {
   )
 })
 
-export default TasksCard
+export default TaskCard

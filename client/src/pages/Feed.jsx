@@ -1,48 +1,48 @@
 import axios from 'axios'
-import { useEffect, useState } from 'react'
-
+import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { BASE_URL } from '../globals'
+
+import TaskCard from '../components/TaskCards'
 
 const Feed = ({ user, authenticated, props }) => {
   const navigate = useNavigate()
-  console.log(user)
-  const [formState, setFormState] = useState({
-    taskName: '',
-    taskDescription: '',
-    taskDueDate: '',
-    taskCompleted: '',
-    userAccount_id: user.id
-  })
   const [tasks, setTasks] = useState([])
 
-  useEffect(() => {
-    const fetchTasks = async () => {
-      const response = await axios.get(`http://localhost:3001/user/${user.id}`)
-      setTasks(response.data)
-    }
-    fetchTasks()
-  }, [user.id])
-
-  useEffect(() => {
-    const apiCall = async () => {
-      let response = await axios.get('http://localhost:3001/tasks')
-      newTask(response.data)
+  const getTasks = async () => {
+    await axios
+      .get(`${BASE_URL}/user/${user.id}`)
+      .then((response) => {
+        setTasks(response.data)
+      })
+      .catch((error) => {
+        console.log(error)
+      })
     }
 
-    apiCall()
-  }, [])
+    const showTasks = (id) => {
+      navigate(`/tasks/${id}`)
+    }
+
+    useEffect(() => {
+      getTasks()
+    }, [])
 
 
   return user && authenticated ? (
     <section>
-      <h3>Tasks</h3>
+      <h3> All Tasks</h3>
       <div className='add-tasks'>
-        <form className='tasks-form'>
-          <label>Task Name: </label>
-          <input/>
-          <label>Task Description: </label>
-          <input/>
-        </form>
+        {tasks.map((task) => (
+          <div key={task.id}>
+            <TaskCard
+              taskName={task.taskName}
+              taskDescription={task.taskDescription}
+              taskDueDate={task.taskDueDate}
+              onClick={showTasks}
+          />
+      </div>
+          ))}
 
       </div>
       <div className="grid col-4">
