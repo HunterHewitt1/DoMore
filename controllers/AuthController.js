@@ -3,7 +3,7 @@ const middleware = require('../middleware')
 
 const Login = async (req, res) => {
   try {
-    console.log(req.body.email)
+    console.log(req.body)
     const user = await UserAccount.findOne({ email: req.body.email })
     console.log(user)
     if (
