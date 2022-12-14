@@ -8,6 +8,7 @@ import { useParams } from 'react-router-dom'
 
 const Tasks = () => {
 let { id } = useParams()
+let navigate = useNavigate()
 console.log(id)
 const [tasks, setTasks] = useState([])
 const [task, updateTask] = useState([])
@@ -27,6 +28,7 @@ const handleUpdate = async (e) => {
   taskDescription: "",
   taskDueDate: "",
   taskCompleted: false})
+  navigate(`/feed`)
 }
 const handleChange = async (event) => {
   console.log(event)

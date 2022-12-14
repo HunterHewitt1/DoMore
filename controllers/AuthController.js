@@ -3,20 +3,16 @@ const middleware = require('../middleware')
 
 const Login = async (req, res) => {
   try {
-    console.log(req.body)
     const user = await UserAccount.findOne({ email: req.body.email })
-    console.log(user)
     if (
       user &&
       (await middleware.comparePassword(user.passwordDigest, req.body.password))
     ) {
-      console.log('first if statement is running')
       let payload = {
         id: user.id,
         email: user.email
       }
       let token = middleware.createToken(payload)
-      console.log(token)
       return res.send({ user: payload, token })
     }
     res.status(401).send({ status: 'Error', msg: 'Unauthorized TEST' })
