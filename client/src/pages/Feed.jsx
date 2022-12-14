@@ -65,11 +65,7 @@ const Feed = (props) => {
       taskCompleted: false,
       userAccount_id: user.id})
     }
-    const handleDelete = async (event) => {
-      setTaskId(event.currentTarget.value)
-      console.log(taskId)
-      await axios.delete(`${BASE_URL}/tasks/${taskId}`)
-    }
+
     useEffect(() => {
       const token = localStorage.getItem('token')
       if (token) {
@@ -79,14 +75,15 @@ const Feed = (props) => {
 
   return user && authenticated ? (
     <section>
-      <form onSubmit={handleSubmit}>
+      <h1>Add a new task</h1>
+      <form className="add-task-form" onSubmit={handleSubmit}>
         <label className='task-form'>Task Name: </label>
         <input value={formState.taskName} onChange={handleChange} id="taskName"></input>
         <label className='task-form2'>Task Description: </label>
         <input value={formState.taskDescription} onChange={handleChange} id="taskDescription"></input>
         <button type="submit">Create New Task</button>
       </form>
-      <h3> All Tasks</h3>
+      <h1> All Tasks</h1>
       <div className='add-tasks'>
         {tasks.map((task) => (
           <div key={task._id}>
