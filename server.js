@@ -64,7 +64,7 @@ app.get('/tasks', async (req, res) => {
 })
 
 app.get('/tasks/:id', async (req, res) => {
-  let getOneTask = await Task.findByPk(req.params.id)
+  let getOneTask = await Task.findById(req.params.id)
   res.json(getOneTask)
 })
 

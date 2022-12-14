@@ -4,8 +4,6 @@ const TaskCard = (props => {
     <h3>{props.taskName}</h3>
     <p>{props.taskDescription}</p>
     <p>{props.taskDueDate}</p>
-
-
     </div>
   )
 })

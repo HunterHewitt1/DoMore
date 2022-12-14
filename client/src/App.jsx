@@ -5,6 +5,7 @@ import Register from './pages/Register'
 import SignIn from './pages/SignIn'
 import Feed from './pages/Feed'
 import Home from './pages/Home'
+import Tasks from './pages/Tasks'
 import './styles/App.css'
 import { CheckSession } from './services/Auth'
 
@@ -47,6 +48,7 @@ const App = () => {
           <Route path="/signin" element={<SignIn toggleAuthenticated={toggleAuthenticated} setUser={setUser}/>} />
           <Route path="/register" element={<Register />} />
           <Route path="/feed" element={<Feed user={user} authenticated={authenticated}/>} />
+          <Route path="/tasks/:id" element={<Tasks user={user} authenticated={authenticated}/>} />
         </Routes>
       </main>
     </div>
