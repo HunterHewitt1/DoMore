@@ -2,6 +2,21 @@ const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 const SALT_ROUNDS = 12
 const APP_SECRET = 'supersecretkey'
+const mongoose = require('mongoose')
+require('dotenv').config()
+
+mongoose
+  .connect(process.env.MONGODB_URI)
+  .then(() => {
+    console.log('Successfully connected to MongoDB')
+  })
+  .catch((e) => {
+    console.log('Connection Error', e.messages)
+  })
+
+const db = mongoose.connection
+
+module.exports = db
 
 const hashPassword = async (password) => {
   // Accepts a password from the request body

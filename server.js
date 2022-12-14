@@ -12,11 +12,6 @@ const port = process.env.PORT || 3001
 app.use(cors())
 app.use(express.json())
 app.use('/auth', AuthRouter)
-app.use(express.static(`${__dirname}/client/build`))
-
-app.get('/*', (req, res) => {
-  res.sendFile(`${__dirname}/client/build/index.html`)
-})
 
 app.listen(port, () => {
   console.log(`Server is running on port: ${port}`)
