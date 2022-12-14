@@ -85,5 +85,4 @@ app.post('/tasks', async (req, res) => {
 app.get('/user/:id', async (req, res) => {
   let getTaskByUser = await Task.find({ userAccount_id: req.params.id })
   res.json(getTaskByUser)
-  console.log('getTaskByUser')
 })

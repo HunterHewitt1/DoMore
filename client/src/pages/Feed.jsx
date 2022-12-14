@@ -5,9 +5,17 @@ import { BASE_URL } from '../globals'
 
 import TaskCard from '../components/TaskCards'
 
-const Feed = ({ user, authenticated, props }) => {
+const Feed = ({ user, authenticated, props}) => {
   const navigate = useNavigate()
+  const [task, setNewTask] = useState([])
   const [tasks, setTasks] = useState([])
+  const [formState, setFormState] = useState({
+    taskName: "",
+    taskDescription: "",
+    taskDueDate: "",
+    taskCompleted: false,
+    userAccount_id: user.id
+  })
 
   const getTasks = async () => {
     await axios
@@ -24,6 +32,28 @@ const Feed = ({ user, authenticated, props }) => {
       navigate(`/tasks/${id}`)
     }
 
+    const handleChange = (event) => {
+      setFormState({ ...formState, [event.target.id]: event.target.value })
+    }
+
+    const handleSubmit = async (e) => {
+      console.log(user)
+      let newTask = await axios 
+      .post(`${BASE_URL}/tasks`, formState)
+      .then((response) => {
+        return response
+      })
+      .catch((error) => {
+        console.log(error)
+      })
+      setNewTask([...task, newTask.data])
+      setFormState({    
+      taskName: "",
+      taskDescription: "",
+      taskDueDate: "",
+      taskCompleted: false,
+      userAccount_id: user.id})
+    }
     useEffect(() => {
       getTasks()
     }, [])
@@ -31,6 +61,14 @@ const Feed = ({ user, authenticated, props }) => {
 
   return user && authenticated ? (
     <section>
+
+      <form onSubmit={handleSubmit}>
+        <label className='task-form'>Task Name: </label>
+        <input value={formState.taskName} onChange={handleChange} id="taskName"></input>
+        <label className='task-form2'>Task Description: </label>
+        <input value={formState.taskDescription} onChange={handleChange} id="taskDescription"></input>
+        <button type="submit">Create Task</button>
+      </form>
       <h3> All Tasks</h3>
       <div className='add-tasks'>
         {tasks.map((task) => (
