@@ -9,6 +9,7 @@ import { useParams } from 'react-router-dom'
 const Tasks = () => {
 let { id } = useParams()
 console.log(id)
+const [tasks, setTasks] = useState([])
 const [task, updateTask] = useState([])
 const [formState, setFormState] = useState({
   taskName: "",
@@ -38,10 +39,37 @@ const handleCheckedBox = async (event) => {
 
   setFormState({ ...formState, [event.target.id]: event.target.checked })
 }
+// const getTasks = async (id) => {
+//   await axios
+//     .get(`${BASE_URL}/user/${id}`)
+//     .then((response) => {
+//       setTasks(response.data)
+//     })
+//     .catch((error) => {
+//       console.log(error)
+//     })
+//   }
+
+//   useEffect(() => {
+//     getTasks(id)
+//   }, [])
+
   return(
     <div>
-      <div>Tasks Details</div>
+      {/* <div>Tasks Details</div>
+      <div className='add-tasks'>
+        {tasks.map((task) => (
+          <div key={task.id}>
+            <TaskCard
+              taskName={task.taskName}
+              taskDescription={task.taskDescription}
+              taskDueDate={task.taskDueDate}
+              taskCompleted={task.taskCompleted}
+          />
+      </div>
+          ))}
 
+      </div> */}
       <h4>Update Task</h4>
 
 

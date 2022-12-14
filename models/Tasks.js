@@ -1,7 +1,7 @@
 const { Schema } = require('mongoose')
 
 const Task = new Schema({
-  taskName: { type: String, required: true },
+  taskName: { type: String, required: false },
   taskDescription: { type: String, required: false },
   taskDueDate: { type: Date, required: false },
   taskCompleted: { type: Boolean, required: false },

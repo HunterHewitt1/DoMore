@@ -76,6 +76,17 @@ const Feed = (props) => {
       taskCompleted: false,
       userAccount_id: user.id})
     }
+    const handleDelete = async (event) => {
+      let deleteTask = await axios.delete(`${BASE_URL}/tasks/${id}`, formState)
+      updateTask([...task, deleteTask.data])
+      setFormState({
+        userAccount_id: '',
+        taskName: "",
+        taskDescription: "",
+        taskDueDate: "",
+        taskCompleted: false,
+      })
+    }
     useEffect(() => {
       console.log("this ocmponent is tryiubg to render")
       const token = localStorage.getItem('token')
@@ -128,5 +139,4 @@ console.log(user)
     </div>
   )
 }
-
 export default Feed
