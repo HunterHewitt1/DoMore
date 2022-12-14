@@ -63,6 +63,11 @@ app.get('/tasks', async (req, res) => {
   res.json(getTasks)
 })
 
+app.get('/tasks/:id', async (req, res) => {
+  let getOneTask = await Task.findByPk(req.params.id)
+  res.json(getOneTask)
+})
+
 app.put('/tasks/:id', async (req, res) => {
   let updateTask = await Task.findByIdAndUpdate(req.params.id, req.body, {
     new: true

@@ -10,11 +10,11 @@ const Feed = ({ user, authenticated, props}) => {
   const [task, setNewTask] = useState([])
   const [tasks, setTasks] = useState([])
   const [formState, setFormState] = useState({
+    userAccount_id: '',
     taskName: "",
     taskDescription: "",
     taskDueDate: "",
     taskCompleted: false,
-    userAccount_id: user.id
   })
 
   const getTasks = async () => {
@@ -55,6 +55,12 @@ const Feed = ({ user, authenticated, props}) => {
       userAccount_id: user.id})
     }
     useEffect(() => {
+      setFormState({    
+        taskName: "",
+        taskDescription: "",
+        taskDueDate: "",
+        taskCompleted: false,
+        userAccount_id: user.id})
       getTasks()
     }, [])
 
