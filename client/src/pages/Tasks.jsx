@@ -14,7 +14,7 @@ const [formState, setFormState] = useState({
   taskName: "",
   taskDescription: "",
   taskDueDate: "",
-  taskCompleted: false,
+  taskCompleted: "",
 })
 
 const handleUpdate = async (e) => {
@@ -28,14 +28,24 @@ const handleUpdate = async (e) => {
   taskCompleted: false})
 }
 const handleChange = async (event) => {
+  console.log(event)
   setFormState({ ...formState, [event.target.id]: event.target.value })
 }
 
+const handleCheckedBox = async (event) => {
+  console.log(event.target.id)
+  console.log(event.target.checked)
+
+  setFormState({ ...formState, [event.target.id]: event.target.checked })
+}
   return(
     <div>
       <div>Tasks Details</div>
 
       <h4>Update Task</h4>
+
+
+
       <form onSubmit={handleUpdate}>
         <label htmlFor="taskName">Task Name</label>
         <input id="taskName" type="text" value={formState.taskName} onChange={handleChange} />
@@ -47,7 +57,7 @@ const handleChange = async (event) => {
         <input id="taskDueDate" type="date" value={formState.taskDueDate} onChange={handleChange} />
 
         <label htmlFor="taskCompleted">Task Completed</label>
-        <input id="taskCompleted" type="checkbox" value={formState.taskCompleted} onChange={handleChange} />
+        <input id="taskCompleted" type="checkbox" value={formState.taskCompleted} onChange={handleCheckedBox} />
 
         <button type="submit">Update Task</button>
 

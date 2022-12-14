@@ -110,6 +110,7 @@ console.log(user)
               taskName={task.taskName}
               taskDescription={task.taskDescription}
               taskDueDate={task.taskDueDate}
+              taskCompleted={task.taskCompleted}
               onClick={()=>showTasks(task._id)}
           />
       </div>
