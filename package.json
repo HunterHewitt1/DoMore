@@ -21,5 +21,14 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "## Date 12/07/22",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HunterHewitt1/DoMore---Productivity-App.git"
+  },
+  "bugs": {
+    "url": "https://github.com/HunterHewitt1/DoMore---Productivity-App/issues"
+  },
+  "homepage": "https://github.com/HunterHewitt1/DoMore---Productivity-App#readme"
 }

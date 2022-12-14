@@ -60,6 +60,5 @@ module.exports = {
   verifyToken,
   createToken,
   comparePassword,
-  hashPassword,
-  db
+  hashPassword
 }
