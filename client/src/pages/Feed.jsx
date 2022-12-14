@@ -83,7 +83,7 @@ const Feed = ({ user, authenticated, props}) => {
               taskName={task.taskName}
               taskDescription={task.taskDescription}
               taskDueDate={task.taskDueDate}
-              onClick={showTasks}
+              onClick={()=>showTasks(task._id)}
           />
       </div>
           ))}
