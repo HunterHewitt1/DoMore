@@ -42,7 +42,7 @@ const handleCheckedBox = async (event) => {
 
   return(
     <div>
-      <h4>Update Task</h4>
+      <h1>Update Task</h1>
       {/* <form onSubmit={handleUpdate}>
         <label htmlFor="taskName">Task Name</label>
         <input id="taskName" type="text" value={formState.taskName} onChange={handleChange} />
