@@ -33,6 +33,8 @@ While planning out this project, I felt relatively confident in my skills going 
 - Calender View
 - Friends
 - Images for tasks
+- Daily % completed
+- Deployed
 
 ---
 
@@ -53,10 +55,6 @@ While planning out this project, I felt relatively confident in my skills going 
 #### **↓ Update Task Page ↓**
 
 #### ![image](https://i.imgur.com/KDMhyg0.png)
-
----
-
-### **_Links_**
 
 ---
 
