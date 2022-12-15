@@ -85,6 +85,34 @@ app.post('/tasks', async (req, res) => {
   res.json(createTask)
 })
 
+//
+app.get('todo', async (req, res) => {
+  let getToDo = await ToDo.find({})
+  res.json(getToDo)
+})
+
+app.get('todo/:id', async (req, res) => {
+  let getOneToDo = await ToDo.findById(req.params.id)
+  res.json(getOneToDo)
+})
+
+app.put('todo/:id', async (req, res) => {
+  let updateToDo = await ToDo.findByIdAndUpdate(req.params.id, req.body, {
+    new: true
+  })
+  res.json(updateToDo)
+})
+
+app.delete('todo/:id', async (req, res) => {
+  let deleteToDo = await ToDo.findByIdAndDelete(req.params.id)
+  res.json(deleteToDo)
+})
+
+app.post('/todo', async (req, res) => {
+  let createToDo = await ToDo.create(req.body)
+  res.json(createToDo)
+})
+
 //get tasks by user
 
 app.get('/user/:id', async (req, res) => {

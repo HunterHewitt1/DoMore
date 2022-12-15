@@ -35,6 +35,7 @@ While planning out this project, I felt relatively confident in my skills going 
 - Images for tasks
 - Daily % completed
 - Deployed
+- ToDo list
 
 ---
 
