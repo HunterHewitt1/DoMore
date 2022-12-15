@@ -14,7 +14,20 @@ const Home = (props) => {
         ></path>
       </svg>
       <img
+        className="home-picture"
+        src=""
+        alt="brewski logo"
       />
+      <div className="writing">
+        <h2>The Best Task Manager</h2>
+        <p>
+        DoMore is a productivity app that can be used to track daily task and
+        post them to your feed to share with friends or to your personal log to
+        hold yourself accountable. DoMore implemets a daily prodcutivty score at
+        the end of the day; this score is used to display a snapshot of daily,
+        weekly, monthly, and even yearly progress.{' '}
+        </p>
+      </div>
       {!props.authenticated && (
         <div className="home-buttons">
           <button id="button" onClick={() => navigate('/signin')}>
@@ -25,12 +38,6 @@ const Home = (props) => {
           </button>
         </div>
       )}
-      <div className="home2">
-        <img
-        />
-        <img
-        />
-      </div>
     </div>
   )
 }
