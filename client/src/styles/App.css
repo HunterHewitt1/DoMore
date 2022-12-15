@@ -284,9 +284,21 @@ form button:disabled {
 }
 #button1{
   margin-left: 10px;
+  transition: all 0.3s ease-in-out;
+
+}
+#button1:hover{
+  color: #ffff;
+  transform: scale(1.05);
+
+}
+#button2:hover{
+  color: #ffff;
+  transform: scale(1.05);
 }
 #button2{
   margin-left: 10px;
+  transition: all 0.3s ease-in-out;
 }
 .add-tasks{
   display: grid;
