@@ -13,8 +13,7 @@ const [task, updateTask] = useState([])
 const [formState, setFormState] = useState({
   taskName: "",
   taskDescription: "",
-  taskDueDate: "",
-  taskCompleted: "",
+  taskDueDate: ""
 })
 
 const handleUpdate = async (e) => {
@@ -24,8 +23,7 @@ const handleUpdate = async (e) => {
   setFormState({  
   taskName: "",
   taskDescription: "",
-  taskDueDate: "",
-  taskCompleted: false})
+  taskDueDate: "",})
   navigate(`/feed`)
 }
 
