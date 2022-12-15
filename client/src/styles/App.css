@@ -86,7 +86,7 @@ h1{
 
 .home-container,
 .signin {
-  min-height: calc(100vh - 4em);
+  min-height: calc(100vh - 55em);
   align-items: center;
   justify-content: center;
 }
@@ -198,12 +198,10 @@ form button:disabled {
 
 .tasks_card{
   display: flex;
-  flex: 1;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 6em;
-
   margin: 2em;
   border: 2px solid var(--primary-button-hover);
   cursor: pointer;
@@ -289,4 +287,9 @@ form button:disabled {
 }
 #button2{
   margin-left: 10px;
+}
+.add-tasks{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
 }

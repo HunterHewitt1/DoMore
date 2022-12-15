@@ -135,7 +135,6 @@ const Feed = (props) => {
         </div>
             ))}
         </div>
-
       <div className="grid col-4">
         <div className="feed"></div>
       </div>
