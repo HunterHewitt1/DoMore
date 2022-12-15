@@ -16,7 +16,7 @@ body {
 }
 
 button {
-  border: 0;
+  border: 2px solid var(--primary-button-hover);
   cursor: pointer;
   transition: all 0.2s ease;
   padding: 0.8em 1.2em;
@@ -41,7 +41,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--primary-bg);
+  background-color: var(--primary-button-hover);
 }
 
 .logo,
