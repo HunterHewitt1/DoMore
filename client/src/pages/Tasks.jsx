@@ -37,23 +37,9 @@ const handleCheckedBox = async (event) => {
   console.log(event.target.checked)
   setFormState({ ...formState, [event.target.id]: event.target.checked })
 }
-
   return(
     <div>
       <h1>Update Task</h1>
-      {/* <form onSubmit={handleUpdate}>
-        <label htmlFor="taskName">Task Name</label>
-        <input id="taskName" type="text" value={formState.taskName} onChange={handleChange} />
-        <label htmlFor="taskDescription">Task Description</label>
-        <input id="taskDescription" type="text" value={formState.taskDescription} onChange={handleChange} />
-        <label htmlFor="taskDueDate">Task Due Date</label>
-        <input id="taskDueDate" type="date" value={formState.taskDueDate} onChange={handleChange} />
-        <label htmlFor="taskCompleted">Task Completed</label>
-        <input id="taskCompleted" type="checkbox" value={formState.taskCompleted} onChange={handleCheckedBox} />
-        <button type="submit">Update Task</button>
-      </form> */}
-
-
       <div className="signin2 col">
         <div className="card-overlay centered">
           <form className="col" onSubmit={handleUpdate}>
