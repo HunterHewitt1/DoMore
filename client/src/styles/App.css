@@ -26,7 +26,6 @@ button {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-left: 82px;
   background-color: var(--primary-button-hover);
   color: var(--secondary-bg);
 } 
@@ -116,7 +115,7 @@ h1{
   padding: 1em;
   border-radius: 8px;
   box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.3);
-}
+  margin: auto;}
 
 form,
 .input-wrapper {
@@ -203,8 +202,8 @@ form button:disabled {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 25vh;
-  width: 25vh;
+  height: 6em;
+
   margin: 2em;
   border: 2px solid var(--primary-button-hover);
   cursor: pointer;
@@ -212,12 +211,25 @@ form button:disabled {
   border-radius: 25px;
   background-color: var(--primary-bg);
   color: var(--secondary-bg);
-  flex-direction: row;
 }
 .tasks_card:hover{
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 .signin2 {
   align-items: center;
   justify-content: center;
+}
+
+.display-block{
+  display: flex;
+  flex-direction: row;
+}
+.deleteBtn{
+  border: 2px solid var(--primary-button-hover); 
+  width: 30%;
+  /* padding: 1em; */
+  border-radius: 5px;
+  box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.3);
+  margin: auto;
+
 }

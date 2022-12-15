@@ -75,7 +75,7 @@ const Feed = (props) => {
 
   return user && authenticated ? (
     <section>
-      <h1>Add a new task</h1>
+      <h1 >Add a new task</h1>
       <div className="signin2 col">
         <div className="card-overlay centered">
           <form className="col" onSubmit={handleSubmit}>
@@ -113,30 +113,22 @@ const Feed = (props) => {
         </div>
     </div>
 
-      {/* <form className="add-task-form" onSubmit={handleSubmit}>
-        <label className='task-form'>Task Name: </label>
-        <input value={formState.taskName} onChange={handleChange} id="taskName"></input>
-        <label className='task-form2'>Task Description: </label>
-        <input value={formState.taskDescription} onChange={handleChange} id="taskDescription"></input>
-        <label className='task-form3'>Task Due Date: </label>
-        <input value={formState.taskDueDate} onChange={handleChange} type="date"id="taskDueDate"></input>
-        <button type="submit">Create New Task</button>
-      </form> */}
       <h1> All Tasks</h1>
-      <div className='add-tasks'>
-        {tasks.map((task) => (
-          <div key={task._id}>
-            <TaskCard
-              taskName={task.taskName}
-              taskDescription={task.taskDescription}
-              taskDueDate={task.taskDueDate}
-              taskCompleted={task.taskCompleted}
-              taskId={task._id}
-              onClick={()=>showTasks(task._id)}
-          />
-      </div>
-          ))}
-      </div>
+        <div className='add-tasks'>
+          {tasks.map((task) => (
+            <div key={task._id}>
+              <TaskCard
+                taskName={task.taskName}
+                taskDescription={task.taskDescription}
+                taskDueDate={task.taskDueDate}
+                taskCompleted={task.taskCompleted}
+                taskId={task._id}
+                onClick={()=>showTasks(task._id)}
+            />
+        </div>
+            ))}
+        </div>
+
       <div className="grid col-4">
         <div className="feed"></div>
       </div>
