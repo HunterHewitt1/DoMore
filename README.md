@@ -24,11 +24,15 @@ DoMore is a productivity app that can be used to track daily task and post them 
 
 ### **_The Proccess_**
 
+While planning out this project, I felt relatively confident in my skills going into the process. Auth errors drove me crazy and it felt like it would never end. With some assistance from some peers, I was able to implement authentication with a token. I underestimated the time expected to build out the features I wanted to present but nevertheless, I am happy with the product I constructed.
+
 ---
 
 ### **_Future Updates_**
 
----
+-
+-
+- ***
 
 ### **_Links_**
 

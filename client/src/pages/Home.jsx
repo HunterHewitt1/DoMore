@@ -16,6 +16,8 @@ const Home = (props) => {
       </svg>
       <h1 className="home-picture"></h1>
       <div className="writing">
+        <h1>DoMore</h1>
+        <br></br>
         <h2>The Best Task Manager</h2>
         <p>
         DoMore is a productivity app that can be used to track daily task and
