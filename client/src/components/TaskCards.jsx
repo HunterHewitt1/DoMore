@@ -16,9 +16,8 @@ const TaskCard = (props => {
       <div className="tasks_card">
         <h3>{props.taskName}</h3>
         <p>{props.taskDescription}</p>
-        <p>{props.taskDueDate}</p>
       </div>
-      <button onClick={handleDelete} value={props.taskId}>Delete</button>
+      <button className='deleteBtn' onClick={handleDelete} value={props.taskId}>Delete</button>
     </div>
   )
 })

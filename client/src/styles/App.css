@@ -27,6 +27,8 @@ button {
   justify-content: center;
   align-items: center;
   margin-left: 82px;
+  background-color: var(--primary-button-hover);
+  color: var(--secondary-bg);
 } 
 
 button,
@@ -73,8 +75,7 @@ main {
   min-height: calc(100vh - 4em);
 }
 h1{
-  align-items: center;
-  justify-content: center;
+  text-align: center;
 }
 
 .col {
@@ -211,7 +212,12 @@ form button:disabled {
   border-radius: 25px;
   background-color: var(--primary-bg);
   color: var(--secondary-bg);
+  flex-direction: row;
 }
 .tasks_card:hover{
   transform: scale(1.1);
+}
+.signin2 {
+  align-items: center;
+  justify-content: center;
 }

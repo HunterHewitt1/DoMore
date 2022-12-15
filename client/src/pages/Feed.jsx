@@ -76,13 +76,52 @@ const Feed = (props) => {
   return user && authenticated ? (
     <section>
       <h1>Add a new task</h1>
-      <form className="add-task-form" onSubmit={handleSubmit}>
+      <div className="signin2 col">
+        <div className="card-overlay centered">
+          <form className="col" onSubmit={handleSubmit}>
+            <div className="input-wrapper">
+              <label htmlFor="email">Task Name </label>
+              <input
+                onChange={handleChange}
+                id="taskName"
+                placeholder="Brush Teeth"
+                value={formState.taskName}
+              />
+            </div>
+            <div className="input-wrapper">
+              <label htmlFor="password">Task Description </label>
+              <input
+                onChange={handleChange}
+                id="taskDescription"
+                value={formState.taskDescription}
+                placeholder="Brush your teeth for 2 minutes"
+              />
+            </div>
+            <div className="input-wrapper">
+              <label htmlFor="password">Task Due Date: </label>
+              <input
+                onChange={handleChange}
+                id="taskDueDate"
+                type="date"
+                value={formState.taskDueDate}
+              />
+            </div>
+            <button >
+              Add Task
+            </button>
+          </form>
+        </div>
+    </div>
+
+      {/* <form className="add-task-form" onSubmit={handleSubmit}>
         <label className='task-form'>Task Name: </label>
         <input value={formState.taskName} onChange={handleChange} id="taskName"></input>
         <label className='task-form2'>Task Description: </label>
         <input value={formState.taskDescription} onChange={handleChange} id="taskDescription"></input>
+        <label className='task-form3'>Task Due Date: </label>
+        <input value={formState.taskDueDate} onChange={handleChange} type="date"id="taskDueDate"></input>
         <button type="submit">Create New Task</button>
-      </form>
+      </form> */}
       <h1> All Tasks</h1>
       <div className='add-tasks'>
         {tasks.map((task) => (
