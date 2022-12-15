@@ -8,6 +8,7 @@ import Home from './pages/Home'
 import Tasks from './pages/Tasks'
 import './styles/App.css'
 import { CheckSession } from './services/Auth'
+import ToDo from './pages/ToDo'
 
 
 const App = () => {
@@ -48,6 +49,7 @@ const App = () => {
           <Route path="/register" element={<Register />} />
           <Route path="/feed" element={<Feed user={user} authenticated={authenticated}/>} />
           <Route path="/tasks/:id" element={<Tasks user={user} authenticated={authenticated}/>} />
+          <Route path="/toDo" element={<ToDo user={user} authenticated={authenticated}/>} />
         </Routes>
       </main>
     </div>

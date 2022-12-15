@@ -8,6 +8,7 @@ const Nav = ({ authenticated, user, handleLogOut }) => {
         <h3 className='auth-welcome'>Welcome {user.email}!</h3>
         <Link to="/">Home</Link>
         <Link to="/feed">Feed</Link>
+        <Link to="/toDo">ToDo</Link>
         <Link onClick={handleLogOut} to="/">Sign Out</Link>
       </nav>
     )
