@@ -30,9 +30,31 @@ While planning out this project, I felt relatively confident in my skills going 
 
 ### **_Future Updates_**
 
--
--
-- ***
+- Calender View
+- Friends
+- Images for tasks
+
+---
+
+### **_Screen Shots_**
+
+#### **↓ Home Page ↓**
+
+#### ![image](https://i.imgur.com/VBfEOvA.png)
+
+#### **↓ Register Page ↓**
+
+#### ![image](https://i.imgur.com/jIhW9f7.png)
+
+#### **↓ Add Task Page ↓**
+
+#### ![image](https://i.imgur.com/GH06F4y.png)
+
+#### **↓ Update Task Page ↓**
+
+#### ![image](https://i.imgur.com/KDMhyg0.png)
+
+---
 
 ### **_Links_**
 
@@ -40,7 +62,17 @@ While planning out this project, I felt relatively confident in my skills going 
 
 ### **_Credits_**
 
-#### Trello Board: [Trello]()
+[Project Prompt](https://github.com/SEI-R-9-19/u3_project_prompt)
+
+[Stack Overflow](https://stackoverflow.com/)
+
+[W3 School](https://www.w3schools.com/)
+
+[MDN](https://developer.mozilla.org/en-US/)
+
+---
+
+#### Trello Board [Trello]()
 
 #### **↓ Component Hierarchy Diagram ↓**
 
