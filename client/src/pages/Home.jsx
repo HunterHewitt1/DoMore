@@ -27,10 +27,10 @@ const Home = (props) => {
       </div>
       {!props.authenticated && (
         <div className="home-buttons">
-          <button id="button" onClick={() => navigate('/signin')}>
+          <button id="button1" onClick={() => navigate('/signin')}>
             Sign In
           </button>
-          <button id="button" onClick={() => navigate('/register')}>
+          <button id="button2" onClick={() => navigate('/register')}>
             Register
           </button>
         </div>

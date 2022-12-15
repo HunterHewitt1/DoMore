@@ -249,8 +249,8 @@ form button:disabled {
   display: flex;
   justify-content: center;
   justify-content: space-evenly;
-  margin-left: 500px;
-  margin-right: 500px;
+  margin-left: 450px;
+  margin-right: 450px;
 }
 
 .pic1 {
@@ -283,4 +283,10 @@ form button:disabled {
   text-align: center;
   margin: 100px;
 
+}
+#button1{
+  margin-left: 10px;
+}
+#button2{
+  margin-left: 10px;
 }
