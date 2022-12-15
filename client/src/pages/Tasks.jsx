@@ -43,7 +43,7 @@ const handleCheckedBox = async (event) => {
   return(
     <div>
       <h4>Update Task</h4>
-      <form onSubmit={handleUpdate}>
+      {/* <form onSubmit={handleUpdate}>
         <label htmlFor="taskName">Task Name</label>
         <input id="taskName" type="text" value={formState.taskName} onChange={handleChange} />
         <label htmlFor="taskDescription">Task Description</label>
@@ -53,9 +53,69 @@ const handleCheckedBox = async (event) => {
         <label htmlFor="taskCompleted">Task Completed</label>
         <input id="taskCompleted" type="checkbox" value={formState.taskCompleted} onChange={handleCheckedBox} />
         <button type="submit">Update Task</button>
-      </form>
+      </form> */}
+
+
+      <div className="signin2 col">
+        <div className="card-overlay centered">
+          <form className="col" onSubmit={handleUpdate}>
+            <div className="input-wrapper">
+              <label htmlFor="email">Task Name </label>
+              <input
+                onChange={handleChange}
+                id="taskName"
+                placeholder="Brush Teeth"
+                value={formState.taskName}
+              />
+            </div>
+            <div className="input-wrapper">
+              <label htmlFor="password">Task Description </label>
+              <input
+                onChange={handleChange}
+                id="taskDescription"
+                value={formState.taskDescription}
+                placeholder="Brush your teeth for 2 minutes"
+              />
+            </div>
+            <div className="input-wrapper">
+              <label htmlFor="password">Task Due Date: </label>
+              <input
+                onChange={handleChange}
+                id="taskDueDate"
+                type="date"
+                value={formState.taskDueDate}
+              />
+            </div>
+            <button type='submit' >
+              Update Task
+            </button>
+          </form>
+        </div>
     </div>
-  )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+)
 }
 
 export default Tasks
