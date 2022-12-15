@@ -21,7 +21,13 @@ button {
   transition: all 0.2s ease;
   padding: 0.8em 1.2em;
   font-size: 1.1rem;
-}
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 82px;
+} 
 
 button,
 input {
@@ -202,8 +208,10 @@ form button:disabled {
   border: 2px solid var(--primary-button-hover);
   cursor: pointer;
   transition: all 0.3s ease-in-out;
+  border-radius: 25px;
+  background-color: var(--primary-bg);
+  color: var(--secondary-bg);
 }
-
 .tasks_card:hover{
   transform: scale(1.1);
 }
