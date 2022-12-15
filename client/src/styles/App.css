@@ -231,5 +231,51 @@ form button:disabled {
   border-radius: 5px;
   box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.3);
   margin: auto;
+}
+/* HOME */
+.home-picture {
+  display: block;
+  margin: auto;
+  height: 200px;
+  width: 600px;
+  z-index: 2;
+}
 
+.writing {
+  text-align: center;
+}
+
+.home-buttons {
+  display: flex;
+  justify-content: center;
+  justify-content: space-evenly;
+  margin-left: 500px;
+  margin-right: 500px;
+}
+
+.pic1 {
+  width: 500px;
+  height: 400px;
+  padding: 10px;
+}
+.pic2 {
+  width: 500px;
+  height: 400px;
+  padding: 10px;
+}
+
+.home p {
+  margin: 0 auto;
+}
+
+.home2 {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.home svg {
+  width: 100%;
+  position: absolute;
+  z-index: -1;
 }
